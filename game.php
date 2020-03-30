@@ -68,7 +68,7 @@ $speler2 = $_SESSION["speler2Keuze"];
     }
 
     ?>
-    
+
 <form class="" method="post">
     <input type="submit" name="reset" value="reset knop">
 </form>
