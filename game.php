@@ -26,42 +26,42 @@ if (isset($_POST["reset"])) {
 <?php
 if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
 
-$speler1 = $_SESSION["speler1Keuze"];
-$speler2 = $_SESSION["speler2Keuze"];
+    $speler1 = $_SESSION["speler1Keuze"];
+    $speler2 = $_SESSION["speler2Keuze"];
 
     ?>
 <div class="">
-<?php echo "Speler 1 heeft gekozen voor: $speler1"; ?>
+    <?php echo "Speler 1 heeft gekozen voor: $speler1"; ?>
 </div>
 <div class="">
-<?php echo "Speler 2 heeft gekozen voor: $speler2"; ?>
+    <?php echo "Speler 2 heeft gekozen voor: $speler2"; ?>
 </div>
 <?php
 
     if ($speler1 === $speler2) {
         echo "Het is gelijk spel";
-    }
-    else if($speler1 === "Steen")   {
-        if($speler2 === "Schaar") {
+     }
+    elseif($speler1 === "Steen") {
+         if($speler2 === "Schaar") {
             echo "Speler 1 wint";
         } else {
             echo "Speler 2 wint";
         }
-    }
-    else if($speler1 === "Papier") {
-        if($speler2 === "Steen") {
+     }
+    elseif($speler1 === "Papier") {
+         if($speler2 === "Steen") {
             echo "Speler 1 wint";
         } else {
-            if($speler2 === "Schaar") {
+             if($speler2 === "Schaar") {
                 echo "speler 2 wint";
             }
         }
-    }
-    else if($speler1 === "Schaar") {
-        if($speler2 === "Steen") {
+     }
+    elseif($speler1 === "Schaar") {
+         if($speler2 === "Steen") {
             echo "Speler 2 wint";
         } else {
-            if($speler2 === "Papier") {
+             if($speler2 === "Papier") {
                 echo "Speler 1 wint";
             }
         }
@@ -75,8 +75,7 @@ $speler2 = $_SESSION["speler2Keuze"];
 <form class="" action="gameStart.php" method="post">
     <input type="submit" name="terug" value="Terug naar Startscherm">
 </form>
-<?php
-
+    <?php
 
 } elseif (isset($_SESSION["speler1Keuze"]) && !isset($_SESSION["speler2Keuze"])) {
     ?>
@@ -98,7 +97,6 @@ $speler2 = $_SESSION["speler2Keuze"];
 </form>
 
     <?php
-
 } if (!isset($_SESSION["speler1Keuze"])) {
     ?>
 <form action="game.php" method="post">
