@@ -21,51 +21,47 @@ if (isset($_POST["reset"])) {
     unset($_SESSION["speler1Keuze"]);
     unset($_SESSION["speler2Keuze"]);
 }
-?>
-
-<?php
-if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
-
+if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])){
     $speler1 = $_SESSION["speler1Keuze"];
     $speler2 = $_SESSION["speler2Keuze"];
 
-    ?>
+?>
 <div class="">
     <?php echo "Speler 1 heeft gekozen voor: $speler1"; ?>
 </div>
 <div class="">
     <?php echo "Speler 2 heeft gekozen voor: $speler2"; ?>
 </div>
-<?php
+    <?php
 
-    if ($speler1 === $speler2) {
-        echo "Het is gelijk spel";
-     }
-    elseif($speler1 === "Steen") {
-         if($speler2 === "Schaar") {
-            echo "Speler 1 wint";
-        } else {
-            echo "Speler 2 wint";
-        }
-     }
-    elseif($speler1 === "Papier") {
-         if($speler2 === "Steen") {
-            echo "Speler 1 wint";
-        } else {
-             if($speler2 === "Schaar") {
-                echo "speler 2 wint";
-            }
-        }
-     }
-    elseif($speler1 === "Schaar") {
-         if($speler2 === "Steen") {
-            echo "Speler 2 wint";
-        } else {
-             if($speler2 === "Papier") {
-                echo "Speler 1 wint";
-            }
+if ($speler1 === $speler2) {
+    echo "Het is gelijk spel" ;
+}
+elseif ($speler1 === "Steen") {
+    if ($speler2 === "Schaar") {
+        echo "Speler 1 wint" ;
+    } else {
+        echo "Speler 2 wint" ;
+    }
+}
+elseif ($speler1 === "Papier") {
+    if ($speler2 === "Steen") {
+        echo "Speler 1 wint" ;
+    } else {
+        if ($speler2 === "Schaar") {
+            echo "speler 2 wint" ;
         }
     }
+}
+elseif ($speler1 === "Schaar") {
+    if ($speler2 === "Steen") {
+        echo "Speler 2 wint" ;
+    } else {
+        if ($speler2 === "Papier") {
+            echo "Speler 1 wint" ;
+        }
+    }
+}
 
     ?>
 
@@ -75,9 +71,10 @@ if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
 <form class="" action="gameStart.php" method="post">
     <input type="submit" name="terug" value="Terug naar Startscherm">
 </form>
-    <?php
 
-} elseif (isset($_SESSION["speler1Keuze"]) && !isset($_SESSION["speler2Keuze"])) {
+<?php
+}
+elseif (isset($_SESSION["speler1Keuze"]) && !isset($_SESSION["speler2Keuze"])) {
     ?>
 <form class="speler1" method="post">
             <h2>Speler 1</h2>
@@ -96,9 +93,11 @@ if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
         </button><br>
 </form>
 
-    <?php
-} if (!isset($_SESSION["speler1Keuze"])) {
-    ?>
+<?php
+}
+if (!isset($_SESSION["speler1Keuze"])) {
+?>
+
 <form action="game.php" method="post">
     <h2>Speler 1</h2>
         <button type="submit" name="speler1Keuze" value="Steen">
