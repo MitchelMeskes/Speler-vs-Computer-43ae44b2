@@ -40,17 +40,13 @@ if (isset($speler)) {
 
     if ($speler === $keuzeComputer) {
         echo "Het is gelijk spel";
-    }
-
-    elseif ($speler === "Steen") {
+    } elseif ($speler === "Steen") {
         if ($keuzeComputer === "Schaar") {
             echo "Speler wint";
         } else {
             echo "computer wint";
         }
-    }
-
-    elseif ($speler === "Papier") {
+    } elseif ($speler === "Papier") {
         if ($keuzeComputer === "Steen") {
             echo "Speler wint";
         } else {
@@ -58,9 +54,7 @@ if (isset($speler)) {
                 echo "computer wint";
             }
         }
-    } 
-
-    elseif ($speler === "Schaar") {
+    } elseif ($speler === "Schaar") {
         if ($keuzeComputer === "Steen") {
             echo "computer wint";
         } else {

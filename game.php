@@ -36,17 +36,13 @@ if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
 
     if ($speler1 === $speler2) {
         echo "Het is gelijk spel" ;
-    }
-
-    elseif ($speler1 === "Steen") {
+    } elseif ($speler1 === "Steen") {
         if ($speler2 === "Schaar") {
             echo "Speler 1 wint" ;
         } else {
             echo "Speler 2 wint" ;
         }
-    }
-
-    elseif ($speler1 === "Papier") {
+    } elseif ($speler1 === "Papier") {
         if ($speler2 === "Steen") {
             echo "Speler 1 wint" ;
         } else {
@@ -54,9 +50,7 @@ if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
                 echo "speler 2 wint" ;
             }
         }
-    }
-
-    elseif ($speler1 === "Schaar") {
+    } elseif ($speler1 === "Schaar") {
         if ($speler2 === "Steen") {
             echo "Speler 2 wint" ;
         } else {
@@ -76,9 +70,7 @@ if (isset($_SESSION["speler1Keuze"]) && isset($_SESSION["speler2Keuze"])) {
 </form>
 
     <?php
-}
-
-elseif (isset($_SESSION["speler1Keuze"]) && !isset($_SESSION["speler2Keuze"])) {
+} elseif (isset($_SESSION["speler1Keuze"]) && !isset($_SESSION["speler2Keuze"])) {
     ?>
 <form class="speler1" method="post">
             <h2>Speler 1</h2>
@@ -117,8 +109,8 @@ if (!isset($_SESSION["speler1Keuze"])) {
 </form>
 
 <h2>Speler 2</h2>
-    <h3>Speler 1 maakt zijn keuze</h3>
-    <?php
+<h3>Speler 1 maakt zijn keuze</h3>
+<?php
     }
 ?>
     </body>
