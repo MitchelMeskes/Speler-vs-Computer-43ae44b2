@@ -19,7 +19,7 @@ if (isset($_POST["reset"])) {
 }
 $computer = array("Steen","Papier","Schaar");
 
-$index = rand(0, count($computer) -1 );
+$index =rand(0, count($computer) - 1 );
 $_SESSION["computer"] = $computer[$index];
 
 if (isset($_SESSION["spelerKeuze"])) {
@@ -29,54 +29,58 @@ if (isset($_SESSION["spelerKeuze"])) {
 $keuzeComputer = $computer[$index];
 
 if (isset($speler)) {
-?>
+    ?>
 <div class="">
     <?php echo "Speler heeft gekozen voor: $speler"; ?>
 </div>
 <div class="">
     <?php echo "Computer heeft gekozen voor: $keuzeComputer "; ?>
 </div>
-<?php
+    <?php
 
-if ($speler === $keuzeComputer) {
-    echo "Het is gelijk spel";
- }
-elseif ($speler === "Steen") {
-     if ($keuzeComputer === "Schaar") {
-        echo "Speler wint";
-    } else {
-        echo "computer wint";
+    if ($speler === $keuzeComputer) {
+        echo "Het is gelijk spel";
     }
- }
-elseif ($speler === "Papier") {
-     if ($keuzeComputer === "Steen") {
-        echo "Speler wint";
-    } else {
+    
+    elseif ($speler === "Steen") {
         if ($keuzeComputer === "Schaar") {
+            echo "Speler wint";
+        } else {
             echo "computer wint";
         }
     }
- }
-elseif ($speler === "Schaar") {
-     if ($keuzeComputer === "Steen") {
-        echo "computer wint";
-    } else {
-         if ($keuzeComputer === "Papier") {
+
+    elseif ($speler === "Papier") {
+        if ($keuzeComputer === "Steen") {
             echo "Speler wint";
+        } else {
+            if ($keuzeComputer === "Schaar") {
+                echo "computer wint";
+            }
         }
     }
-}
-?>
+
+    elseif ($speler === "Schaar") {
+        if ($keuzeComputer === "Steen") {
+            echo "computer wint";
+        } else {
+            if ($keuzeComputer === "Papier") {
+                echo "Speler wint";
+            }
+        }
+    }
+
+    ?>
     <form class="" method="post">
         <input type="submit" name="reset" value="reset knop">
     </form>
     <form class="" action="gameStart.php" method="post">
         <input type="submit" name="terug" value="Terug naar Startscherm">
     </form>
-<?php
+    <?php
 }
 if (!isset($_SESSION["spelerKeuze"])) {
-?>
+    ?>
     <form action="gameSVC.php" method="post">
         <h2>Speler</h2>
             <button type="submit" name="spelerKeuze" value="Steen">
@@ -89,7 +93,7 @@ if (!isset($_SESSION["spelerKeuze"])) {
                 <img src="https://www.scharenpunt.nl/5596/90.jpg"/>
             </button><br>
     </form>
-<?php
+    <?php
 }
 ?>
     </body>
