@@ -19,7 +19,7 @@ if (isset($_POST["reset"])) {
 }
 $computer = array("Steen","Papier","Schaar");
 
-$index =rand(0, count($computer) - 1 );
+$index = rand(0, count($computer) - 1);
 $_SESSION["computer"] = $computer[$index];
 
 if (isset($_SESSION["spelerKeuze"])) {
@@ -41,7 +41,7 @@ if (isset($speler)) {
     if ($speler === $keuzeComputer) {
         echo "Het is gelijk spel";
     }
-    
+
     elseif ($speler === "Steen") {
         if ($keuzeComputer === "Schaar") {
             echo "Speler wint";
@@ -58,7 +58,7 @@ if (isset($speler)) {
                 echo "computer wint";
             }
         }
-    }
+    } 
 
     elseif ($speler === "Schaar") {
         if ($keuzeComputer === "Steen") {
