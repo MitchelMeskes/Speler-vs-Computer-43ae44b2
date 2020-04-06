@@ -110,8 +110,8 @@ if (!isset($_SESSION["speler1Keuze"])) {
 
 <h2>Speler 2</h2>
 <h3>Speler 1 maakt zijn keuze</h3>
-<?php
-    }
+    <?php
+}
 ?>
     </body>
 </html>
